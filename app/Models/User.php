@@ -40,4 +40,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function pets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\VPet');
+    }
 }
