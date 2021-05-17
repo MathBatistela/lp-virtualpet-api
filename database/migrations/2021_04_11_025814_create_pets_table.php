@@ -15,25 +15,20 @@ class CreatePetsTable extends Migration
     {
         Schema::create('v_pets', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name');
-            $table->float('life_time')->default(0);
-            $table->string('skin');
+            $table->string('name')->default('My Pet');
+            $table->float('lifeTime')->default(0);
+            $table->string('skin')->default('tailed');
             $table->string('state')->default('NORMAL');
-            $table->float('happiness')->default(70);
-            $table->float('hunger')->default(0);
+            $table->float('happiness')->default(100);
+            $table->float('hunger')->default(100);
             $table->float('health')->default(100);
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->time('reference_time')->default("00:00");
+            $table->foreignId('userId')->constrained('users')->onDelete('cascade');
+            $table->bigInteger('referenceTime')->nullable()->default(0);
+            $table->string('lastScene')->default('home');
             $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();
-
-//        Schema::table('pets', function (Blueprint $table) {
-//            $table->foreign('pets_user_id_foreign"')
-//                ->references('id')
-//                ->on('users');
-//        });
 
     }
 
