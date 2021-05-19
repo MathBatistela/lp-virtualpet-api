@@ -25,8 +25,8 @@ class VPetFactory extends Factory
         $users = User::all()->pluck('id')->toArray();
         return [
             'name' => $this->faker->firstName,
-            'skin' => $this->faker->randomElement(array('HERBIVORE','CARNIVORE','OMNIVORE')),
-            'user_id' => $this->faker->randomElement($users),
+            'skin' => $this->faker->randomElement(array('mohicam','tailed','hybrid')),
+            'userId' => $this->faker->randomElement($users),
         ];
     }
 }

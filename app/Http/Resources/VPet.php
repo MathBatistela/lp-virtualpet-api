@@ -18,6 +18,8 @@ class VPet extends JsonResource
             'state' => $this->state,
             'health' => $this->health,
             'hunger' => $this->hunger,
+            'energy' => $this->energy,
+            'dirty' => $this->dirty,
             'happiness' => $this->happiness,
             'lastScene' => $this->lastScene,
             'referenceTime' => $this->referenceTime,

@@ -12,7 +12,9 @@ class VPet extends Model
     protected $casts = [
         'health' => 'float',
         'hunger' => 'float',
-        'happiness' => 'float'
+        'happiness' => 'float',
+        'energy' => 'float',
+        'dirty' => 'float',
     ];
 
     protected $fillable = [
@@ -22,6 +24,8 @@ class VPet extends Model
         'state',
         'health',
         'hunger',
+        'energy',
+        'dirty',
         'happiness',
         'lastScene',
         'referenceTime'

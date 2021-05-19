@@ -18,13 +18,15 @@ class CreatePetsTable extends Migration
             $table->string('name')->default('My Pet');
             $table->float('lifeTime')->default(0);
             $table->string('skin')->default('tailed');
-            $table->string('state')->default('NORMAL');
+            $table->string('state')->default('normal');
             $table->float('happiness')->default(100);
             $table->float('hunger')->default(100);
             $table->float('health')->default(100);
+            $table->float('energy')->default(100);
+            $table->float('dirty')->default(100);
             $table->foreignId('userId')->constrained('users')->onDelete('cascade');
-            $table->bigInteger('referenceTime')->nullable()->default(0);
-            $table->string('lastScene')->default('home');
+            $table->bigInteger('referenceTime')->nullable()->default(1621371188930);
+            $table->string('lastScene')->default('bedroom');
             $table->timestamps();
         });
 

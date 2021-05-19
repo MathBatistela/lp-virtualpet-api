@@ -31,6 +31,8 @@ class VPetController extends Controller
                 'state' => $request->state,
                 'health' => $request->health,
                 'hunger' => $request->hunger,
+                'energy' => $request->energy,
+                'dirty' => $request->dirty,
                 'happiness' => $request->happiness,
                 'lastScene' => $request->lastScene,
                 'referenceTime' => $request->referenceTime
@@ -66,12 +68,15 @@ class VPetController extends Controller
             $pet = VPet::find($id);
 
             $pet->name = is_null($request->name) ? $pet->name : $request->name;
+            $pet->userId = is_null($request->userId) ? $pet->userId : $request->userId;
             $pet->lifeTime = is_null($request->lifeTime) ? $pet->lifeTime : $request->lifeTime;
             $pet->skin = is_null($request->skin) ? $pet->skin : $request->skin;
             $pet->state = is_null($request->state) ? $pet->state : $request->state;
             $pet->health = is_null($request->health) ? $pet->health : $request->health;
             $pet->happiness = is_null($request->happiness) ? $pet->happiness : $request->happiness;
             $pet->hunger = is_null($request->hunger) ? $pet->hunger : $request->hunger;
+            $pet->energy = is_null($request->energy) ? $pet->energy : $request->energy;
+            $pet->dirty = is_null($request->dirty) ? $pet->dirty : $request->dirty;
             $pet->lastScene = is_null($request->lastScene) ? $pet->lastScene : $request->lastScene;
             $pet->referenceTime = is_null($request->referenceTime) ? $pet->referenceTime : $request->referenceTime;
             $pet->save();
